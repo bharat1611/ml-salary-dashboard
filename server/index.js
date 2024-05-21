@@ -2,14 +2,16 @@ const express = require('express');
 const cors = require('cors');
 const OpenAI = require("openai");
 const salaryData = require('./salaryData');
+require('dotenv').config()
 
+// console.log(process.env.API_KEY);
 const app = express();
 const port = 5000;
 app.use(cors());
 app.use(express.json());
 
 const openai = new OpenAI({
-  apiKey: 'API_KEY',
+  apiKey: process.env.API_KEY,
 });
 
 app.post('/api/chat', async (req, res) => {
