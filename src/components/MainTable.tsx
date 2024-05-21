@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Table } from 'antd';
 import salaryData from '../data/salaryData';
 
+// eslint-disable-next-line
 const MainTable: React.FC<{ onSelectYear: (year: number) => void }> = ({ onSelectYear }) => {
   const [sortedInfo, setSortedInfo] = useState(null);
 
